@@ -1,7 +1,7 @@
 import {Card, DiceCard, ReRollCard, AccessoryCard, PartCard} from './Card';
 import { Tools } from './Tools';
 import { Power, JsonCard } from './defs';
-import { Part } from './Part';
+import { Part, PartFactory } from './Part';
 
 const initialDeck = []
 // more dice
@@ -9,7 +9,7 @@ Tools.newArray(12).forEach(e => initialDeck.push( new DiceCard() ))
 // reroll dice
 Tools.newArray(4).forEach(e => initialDeck.push( new ReRollCard() ))
 // accessories
-const powers = [Power.Hit, Power.Shoot]
+const powers = [Power.Hit, Power.Rocket]
 const values: (-1 | 1)[] = [-1, 1]
 powers.forEach(p => {
     values.forEach(v => {
@@ -20,7 +20,8 @@ powers.forEach(p => {
 })
 // parts
 const parts = require('../datas/cards.json').map( (cardInfos: JsonCard) => {
-    new PartCard(new Part())
+    const part = PartFactory.createPart(cardInfos.type, cardInfos.activator, cardInfos.effects)
+    new PartCard(part)
 })
 initialDeck.push(...parts)
 

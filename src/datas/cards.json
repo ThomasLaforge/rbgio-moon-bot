@@ -1,5 +1,329 @@
 [
     {
-        
+        "type": 0,
+        "activator": {
+            "type": 0,
+            "values": [4]
+        },
+        "effects": [
+            {
+                "power": 0,
+                "amount": 2
+            }
+        ]
+    },
+    {
+        "type": 0,
+        "activator": {
+            "type": 0,
+            "values": [1,2,3]
+        },
+        "effects": [
+            {
+                "power": 0,
+                "amount": 1
+            }
+        ]
+    },
+    {
+        "type": 0,
+        "activator": {
+            "type": 0,
+            "values": [6]
+        },
+        "effects": [
+            {
+                "power": 0,
+                "amount": 2
+            }
+        ]
+    },
+    {
+        "type": 0,
+        "activator": {
+            "type": 0,
+            "values": [5]
+        },
+        "effects": [
+            {
+                "power": 1,
+                "amount": 2
+            }
+        ]
+    },
+    {
+        "type": 1,
+        "activator": {
+            "type": 0,
+            "values": [1]
+        },
+        "effects": [
+            {
+                "power": 0,
+                "amount": 1
+            },
+            {
+                "power": 1,
+                "amount": 1
+            }
+        ]
+    },
+    {
+        "type": 1,
+        "activator": {
+            "type": 3,
+            "values": [7]
+        },
+        "effects": [
+            {
+                "power": 1,
+                "amount": 3
+            }
+        ]
+    },
+    {
+        "type": 1,
+        "activator": {
+            "type": 1,
+            "values": [10]
+        },
+        "effects": [
+            {
+                "power": 1,
+                "amount": 3
+            },
+            {
+                "power": 0,
+                "amount": 2
+            }
+        ]
+    },
+    {
+        "type": 1,
+        "activator": {
+            "type": 0,
+            "values": [2]
+        },
+        "effects": [
+            {
+                "power": 0,
+                "amount": 1
+            },
+            {
+                "power": 1,
+                "amount": 1
+            }
+        ]
+    },
+    {
+        "type": 2,
+        "activator": {
+            "type": 0,
+            "values": [2,4,6]
+        },
+        "effects": [
+            {
+                "power": 1,
+                "amount": 1
+            }
+        ]
+    },
+    {
+        "type": 2,
+        "activator": {
+            "type": 2,
+            "values": [4]
+        },
+        "effects": [
+            {
+                "power": 2,
+                "amount": 3
+            },
+            {
+                "power": 0,
+                "amount": 2
+            }
+        ]
+    },
+    {
+        "type": 2,
+        "activator": {
+            "type": 4
+        },
+        "effects": [
+            {
+                "power": 1,
+                "amount": 3
+            }
+        ]
+    },
+    {
+        "type": 2,
+        "activator": {
+            "type": 0,
+            "values": [6]
+        },
+        "effects": [
+            {
+                "power": 2,
+                "amount": 2
+            }
+        ]
+    },
+    {
+        "type": 3,
+        "activator": {
+            "type": 0,
+            "values": [4,5,6]
+        },
+        "effects": [
+            {
+                "power": 0,
+                "amount": 1
+            }
+        ]
+    },
+    {
+        "type": 3,
+        "activator": {
+            "type": 0,
+            "values": [3]
+        },
+        "effects": [
+            {
+                "power": 0,
+                "amount": 2
+            }
+        ]
+    },
+    {
+        "type": 3,
+        "activator": {
+            "type": 0,
+            "values": [1]
+        },
+        "effects": [
+            {
+                "power": 2,
+                "amount": 2
+            }
+        ]
+    },
+    {
+        "type": 3,
+        "activator": {
+            "type": 0,
+            "values": [2]
+        },
+        "effects": [
+            {
+                "power": 0,
+                "amount": 2
+            }
+        ]
+    },
+    
+    {
+        "type": 4,
+        "activator": {
+            "type": 0,
+            "values": [5]
+        },
+        "effects": [
+            {
+                "power": 1,
+                "amount": 2
+            }
+        ]
+    },
+    {
+        "type": 4,
+        "activator": {
+            "type": 4
+        },
+        "effects": [
+            {
+                "power": 1,
+                "amount": 3
+            }
+        ]
+    },
+    {
+        "type": 4,
+        "activator": {
+            "type": 0,
+            "values": [4]
+        },
+        "effects": [
+            {
+                "power": 1,
+                "amount": 2
+            }
+        ]
+    },
+    {
+        "type": 4,
+        "activator": {
+            "type": 0,
+            "values": [1,3,5]
+        },
+        "effects": [
+            {
+                "power": 1,
+                "amount": 1
+            }
+        ]
+    },
+    {
+        "type": 5,
+        "activator": {
+            "type": 0,
+            "values": [2,3,4]
+        },
+        "effects": [
+            {
+                "power": 2,
+                "amount": 1
+            }
+        ]
+    },
+    {
+        "type": 5,
+        "activator": {
+            "type": 3,
+            "values": [7]
+        },
+        "effects": [
+            {
+                "power": 2,
+                "amount": 3
+            }
+        ]
+    },
+    {
+        "type": 5,
+        "activator": {
+            "type": 0,
+            "values": [3]
+        },
+        "effects": [
+            {
+                "power": 2,
+                "amount": 2
+            }
+        ]
+    },
+    {
+        "type": 5,
+        "activator": {
+            "type": 0,
+            "values": [3,4,5]
+        },
+        "effects": [
+            {
+                "power": 1,
+                "amount": 1
+            }
+        ]
     }
 ]

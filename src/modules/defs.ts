@@ -9,13 +9,41 @@ export interface StorePosition {
     row: number
 }
 
-export enum Power {
-    Energy,
-    Hit,
-    Shoot
+export interface Activator {
+    type: ActivatorType,
+    values: number[],
+}
+
+export interface JsonEffect {
+    power: Power,
+    amount: number
 }
 
 export interface JsonCard {
-    diceValues: number[],
-    effect: 
+    activator: Activator,
+    effects: JsonEffect[],
+    type: PartType
+}
+
+export enum PartType {
+    Head = 0,
+    LeftArm = 1,
+    RightArm = 2,
+    Body = 3,
+    LeftLeg = 4,
+    RightLeg = 5
+}
+
+export enum Power {
+    Energy = 0,
+    Hit = 1,
+    Rocket = 2
+}
+
+export enum ActivatorType {
+    DiceValues = 0,
+    MoreThan = 1,
+    LessThan = 2,
+    Equal = 3,
+    Same = 4
 }

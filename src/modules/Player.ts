@@ -25,4 +25,5 @@ export class Player {
     dicesAreRolled(){
         return this.diceValues.length > 0
     }
+
 }
