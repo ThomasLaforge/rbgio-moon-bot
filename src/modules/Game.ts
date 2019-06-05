@@ -40,5 +40,11 @@ export class Game {
         this.checkIsPlayerToPlay(player)
         return player.rollDices()
     }
-    
+
+    isGameOver(){
+        const alivePlayers = this.players.filter(p => p.robot.isAlive())
+        const nbAlivePlayers = alivePlayers.length
+        return nbAlivePlayers > 1
+    }
+
 }
