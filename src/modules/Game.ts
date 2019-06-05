@@ -2,16 +2,21 @@ import { Deck } from "./Deck";
 import { Player } from "./Player";
 import { Tools } from "./Tools";
 import { Card } from "./Card";
+import { PartStore } from "./PartStore";
+import { NB_STORE_LINES, NB_STORE_COLUMNS } from "./defs";
 
 export class Game {
 
     constructor(
         public players: Player[],
+        shuffle = true,
         public deck = new Deck(),
         public currentPlayerIndex = 0,
-        shuffle = true
+        public store = new PartStore()
     ){
         shuffle && this.shufflePlayers()
+        const cards = this.deck.drawCards(NB_STORE_LINES * NB_STORE_COLUMNS)
+        this.store.init(cards)
     }
 
     checkIsPlayerToPlay(player: Player){
