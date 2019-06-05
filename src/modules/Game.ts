@@ -13,7 +13,11 @@ export class Game {
         shuffle && this.shufflePlayers()
     }
 
-
+    checkIsPlayerToPlay(player: Player){
+        if(!this.players[this.currentPlayerIndex].isEqual(player)){
+            throw "not this player to player";
+        }
+    }
 
     shufflePlayers(){
         this.players = Tools.shuffle(this.players)
