@@ -3,8 +3,12 @@ import { Power } from "./defs";
 
 export abstract class Card {
     constructor(
-        public cost: 0 | 1 = 0,
+        public cost: 0 | 1 = 0
     ){}
+
+    isEqual(card: Card){
+        return JSON.stringify(card) === JSON.stringify(this)
+    }
 }
 
 export class PartCard extends Card {

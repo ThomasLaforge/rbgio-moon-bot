@@ -1,4 +1,4 @@
-import { MAX_NB_DICE, DEFAULT_START_ENERGY, DEFAULT_NB_DICE, NB_ACCESSORIES_SLOTS } from "./defs";
+import { MAX_NB_DICE, DEFAULT_START_ENERGY, DEFAULT_NB_DICE, NB_ACCESSORIES_SLOTS, MAX_ENERGY } from "./defs";
 import { Head, Body, LeftArm, RightArm, LeftLeg, RightLeg, Part } from "./Part";
 import { PartCard, AccessoryCard, Card, ReRollCard, DiceCard } from "./Card";
 
@@ -17,6 +17,16 @@ export class Robot {
         public canReRoll = false
     )
     {}
+
+    winEnergy(amount: number){
+        this.energy += amount
+        if(this.energy > MAX_ENERGY){
+            this.energy = MAX_ENERGY
+        }
+    }
+    loseEnergy(amount: number){
+        this.energy -= amount
+    }
     
     addCard(card: Card){
         if(card instanceof PartCard){

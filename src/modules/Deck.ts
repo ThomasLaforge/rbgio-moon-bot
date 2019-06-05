@@ -3,7 +3,7 @@ import { Tools } from './Tools';
 import { Power, JsonCard } from './defs';
 import { Part, PartFactory } from './Part';
 
-const initialDeck = []
+const initialDeck: Card[] = []
 // more dice
 Tools.newArray(12).forEach(e => initialDeck.push( new DiceCard() ))
 // reroll dice
@@ -21,7 +21,7 @@ powers.forEach(p => {
 // parts
 const parts = require('../datas/cards.json').map( (cardInfos: JsonCard) => {
     const part = PartFactory.createPart(cardInfos.type, cardInfos.activator, cardInfos.effects)
-    new PartCard(part)
+    return new PartCard(part)
 })
 initialDeck.push(...parts)
 
@@ -30,12 +30,11 @@ export class Deck {
     public arrayDeck: Card[];
 
     constructor(arrayDeck?: Card[], shuffle = true) {
-        this.arrayDeck = []
-
         if(arrayDeck){
             this.arrayDeck = arrayDeck
         }
         else {
+            this.arrayDeck = initialDeck.slice()
             shuffle && this.shuffle()
         }
     }

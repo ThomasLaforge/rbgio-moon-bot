@@ -12,4 +12,8 @@ export class Tools {
         }
         return a;
     }
+
+    static arraySum(arr: number[]){
+        return arr.reduce( (sum, e) => sum + e, 0)
+    }
 }

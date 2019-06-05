@@ -24,12 +24,22 @@ export class Player {
         return this.diceValues
     }
 
+    reRoll(diceValues: number[]){
+        const diceIndexes = diceValues.map(value => this.diceValues.findIndex(dv => dv === value))
+        diceIndexes.forEach(i => {
+            this.diceValues[i] = new Dice().value
+        })
+    }
+
     resetDices(){
         this.diceValues = []
     }
 
     dicesAreRolled(){
         return this.diceValues.length > 0
+    }
+    get hasRolledDices(){
+        return this.dicesAreRolled()
     }
 
     isEqual(player: Player){

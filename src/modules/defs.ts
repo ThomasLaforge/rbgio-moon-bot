@@ -1,8 +1,12 @@
+import { Part } from "./Part";
+import { Player } from "./Player";
+
 export const DEFAULT_NB_DICE = 1
 export const MAX_NB_DICE = 4
 export const NB_STORE_LINES = 3
 export const NB_STORE_COLUMNS = 3
 export const DEFAULT_START_ENERGY = 15
+export const MAX_ENERGY = 18
 export const NB_ACCESSORIES_SLOTS = 2
 
 export interface StorePosition {
@@ -24,6 +28,12 @@ export interface JsonCard {
     activator: Activator,
     effects: JsonEffect[],
     type: PartType
+}
+
+export interface DiceUseDescription {
+    diceValues: number[],
+    part: Part,
+    player?: Player
 }
 
 export enum PartType {
