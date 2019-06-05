@@ -81,4 +81,11 @@ export class Robot {
         ].filter(part => !!part) // get all parts not undefined
     }
 
+    isAlive(){
+        return this.energy > 0
+    }
+    isDead(){
+        return !this.isAlive()
+    }
+
 }
