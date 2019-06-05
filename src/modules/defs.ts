@@ -3,6 +3,7 @@ export const MAX_NB_DICE = 4
 export const NB_STORE_LINES = 3
 export const NB_STORE_COLUMNS = 3
 export const DEFAULT_START_ENERGY = 15
+export const NB_ACCESSORIES_SLOTS = 2
 
 export interface StorePosition {
     col: number

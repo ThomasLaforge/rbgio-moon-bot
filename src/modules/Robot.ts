@@ -1,6 +1,6 @@
-import { MAX_NB_DICE, DEFAULT_START_ENERGY, DEFAULT_NB_DICE } from "./defs";
+import { MAX_NB_DICE, DEFAULT_START_ENERGY, DEFAULT_NB_DICE, NB_ACCESSORIES_SLOTS } from "./defs";
 import { Head, Body, LeftArm, RightArm, LeftLeg, RightLeg, Part } from "./Part";
-import { PartCard } from "./Card";
+import { PartCard, AccessoryCard, Card, ReRollCard, DiceCard } from "./Card";
 
 export class Robot {
 
@@ -12,10 +12,27 @@ export class Robot {
         public leftArm?: LeftArm,
         public rightArm?: RightArm,
         public leftLeg?: LeftLeg,
-        public rightLeg?: RightLeg
+        public rightLeg?: RightLeg,
+        public accessories: AccessoryCard[] = [],
+        public canReRoll = false
     )
     {}
-
+    
+    addCard(card: Card){
+        if(card instanceof PartCard){
+            this.addPart(card.part)
+        }
+        else if(card instanceof AccessoryCard){
+            this.addAccessory(card)
+        }
+        else if(card instanceof ReRollCard){
+            this.addReRollCard()
+        }
+        else if(card instanceof DiceCard){
+            this.addDice()
+        }
+    }
+        
     addDice(){
         if(this.nbDice === MAX_NB_DICE){
             throw "can't add more dice"
@@ -23,8 +40,25 @@ export class Robot {
         this.nbDice++
     }
 
-    addPart(card: PartCard){
-        const part = card.part
+    addAccessory(card: AccessoryCard){
+        if(this.accessories.length < NB_ACCESSORIES_SLOTS){
+            this.accessories.push(card)
+        }
+        else {
+            throw "no more free accessories slots";
+        }
+    }
+
+    addReRollCard(){
+        if(!this.canReRoll){
+            this.canReRoll = true
+        }
+        else {
+            throw "already have reroll capacity";   
+        }
+    }
+
+    addPart(part: Part){
         if(part instanceof Head){ this.head = part }
         else if(part instanceof Body){ this.body = part }
         else if(part instanceof LeftArm){ this.leftArm = part }
