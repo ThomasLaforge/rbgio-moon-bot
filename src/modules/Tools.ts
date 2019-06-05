@@ -1,8 +1,8 @@
 export class Tools {
     constructor(){}
 
-    static newArray(size: number){
-        return new Array(size).fill(null)
+    static newArray(size: number, content:any = null){
+        return new Array(size).fill(content)
     }
 
     static shuffle(a: any[]) {
