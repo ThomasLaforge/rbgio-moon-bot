@@ -1,5 +1,6 @@
 import { Robot } from "./Robot";
 import { Dice } from "./Dice";
+import { Card } from "./Card";
 
 export class Player {
 
@@ -9,6 +10,10 @@ export class Player {
         public diceValues: number[] = []
     ){}
 
+    addCard(card: Card){
+        this.robot.addCard(card)
+    }
+
     rollDices(){
         let diceValues: number[] = []
 
@@ -16,6 +21,7 @@ export class Player {
             diceValues.push(new Dice().value)
         }
         this.diceValues = diceValues
+        return this.diceValues
     }
 
     resetDices(){
@@ -24,6 +30,10 @@ export class Player {
 
     dicesAreRolled(){
         return this.diceValues.length > 0
+    }
+
+    isEqual(player: Player){
+        return this.username === player.username
     }
 
 }

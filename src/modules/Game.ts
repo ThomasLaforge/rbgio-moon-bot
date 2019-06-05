@@ -1,6 +1,7 @@
 import { Deck } from "./Deck";
 import { Player } from "./Player";
 import { Tools } from "./Tools";
+import { Card } from "./Card";
 
 export class Game {
 
@@ -30,5 +31,14 @@ export class Game {
         }
     }
 
-    // AddCard
+    addCard(player: Player, card: Card){
+        this.checkIsPlayerToPlay(player)
+        player.addCard(card)
+    }
+
+    rollDices(player: Player){
+        this.checkIsPlayerToPlay(player)
+        return player.rollDices()
+    }
+    
 }
