@@ -35,8 +35,8 @@ export class PartStore {
         this.complete()
     }
 
-    getCost(pos: StorePosition){
-        const card = this.getCard(pos)
+    getCost(card: Card){
+        const pos = this.getPosition(card)
         return card ? pos.row + card.cost : 0
     }
 
@@ -69,7 +69,6 @@ export class PartStore {
     }
 
     complete(){
-        console.log('cards before complete', this.cards)
         for (let i = 0; i < NB_STORE_LINES; i++) {
             for (let j = 0; j < NB_STORE_COLUMNS; j++) {
                 if(this.cards[i][j] === null){

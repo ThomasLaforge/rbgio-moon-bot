@@ -62,8 +62,13 @@ export class Game {
 
     buyCard(player: Player, card: Card){
         this.checkIsPlayerToBuy(player)
+        // consume energy
+        const cost = this.store.getCost(card)
+        player.robot.loseEnergy(cost)
+        // add card
         this.store.takeCard(card)
         player.addCard(card)
+        // update game state
         this.HasBought = true
     }
 
@@ -78,6 +83,11 @@ export class Game {
             throw "too many dices to reroll"
         }
         this.currentPlayer.reRoll(diceValuesToReRoll)
+    }
+
+    // TODO
+    getDefaultDiceUseDescriptions(): DiceUseDescription[]{
+        return []
     }
 
     useDices(player: Player, descs: DiceUseDescription[]){
@@ -158,6 +168,8 @@ export class Game {
                 }
             })
         })
+
+        this.nextPlayer()
         
     }
 
