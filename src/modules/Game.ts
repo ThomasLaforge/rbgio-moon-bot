@@ -10,15 +10,12 @@ export class Game {
     constructor(
         public players: Player[],
         shuffle = true,
-        public deck = new Deck(),
         public currentPlayerIndex = 0,
         public store = new PartStore(),
         public HasBought = false,
         public hasReRoll = false,        
     ){
         shuffle && this.shufflePlayers()
-        const cards = this.deck.drawCards(NB_STORE_LINES * NB_STORE_COLUMNS)
-        this.store.init(cards)
     }
 
     checkIsPlayerToPlay(player: Player){
@@ -65,8 +62,8 @@ export class Game {
 
     buyCard(player: Player, card: Card){
         this.checkIsPlayerToBuy(player)
+        this.store.takeCard(card)
         player.addCard(card)
-        this.store.useCard(card)
         this.HasBought = true
     }
 
