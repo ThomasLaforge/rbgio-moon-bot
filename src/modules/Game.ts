@@ -144,24 +144,14 @@ export class Game {
                 if(e.power === Power.Energy){
                     player.robot.winEnergy(e.amount)
                 }
-                else if(e.power === Power.Hit){
+                else {
                     const accessories = player.robot.accessories
-                    const accessoriesBonus = accessories.filter(a => a.power === Power.Hit && a.values === 1).length
+                    const accessoriesBonus = accessories.filter(a => a.power === e.power && a.values === 1).length
                     const opponent = desc.player as Player
                     const opponentsAccessories = opponent.robot.accessories
-                    const opponentDefense = opponentsAccessories.filter(a => a.power === Power.Hit && a.values === -1).length
+                    const opponentDefense = opponentsAccessories.filter(a => a.power === e.power && a.values === -1).length
                     const amount = e.amount + accessoriesBonus - opponentDefense
-                    if(amount > 0){
-                        opponent.robot.loseEnergy(amount)
-                    }
-                }
-                else if(e.power === Power.Rocket){
-                    const accessories = player.robot.accessories
-                    const accessoriesBonus = accessories.filter(a => a.power === Power.Rocket && a.values === 1).length
-                    const opponent = desc.player as Player
-                    const opponentsAccessories = opponent.robot.accessories
-                    const opponentDefense = opponentsAccessories.filter(a => a.power === Power.Rocket && a.values === -1).length
-                    const amount = e.amount + accessoriesBonus - opponentDefense
+                    
                     if(amount > 0){
                         opponent.robot.loseEnergy(amount)
                     }
