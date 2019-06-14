@@ -22,11 +22,11 @@ export class EnergyBar extends Component<EnergyBarProps, EnergyBarState> {
 
     renderEnergies(){
         const max = this.props.max || MAX_ENERGY
-        const colors = chroma.scale(['green', 'red']).colors(max);
+        const colors = chroma.scale(['green', 'red']).colors(max + 1);
         console.log('colors', colors)
         let energies: JSX.Element[] = []
         
-        for (let i = 0; i < max; i++) {
+        for (let i = 0; i <= max; i++) {
             const energyValue = max - i
             const color = colors[i]
             energies.push(<Energy 
