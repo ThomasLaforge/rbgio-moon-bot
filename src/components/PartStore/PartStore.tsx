@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Card } from '../modules/Card';
+import { Card } from '../../modules/Card';
 
 interface PartStoreProps {
     cards: Card[][]

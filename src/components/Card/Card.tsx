@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import { Card as CardModel } from '../modules/Card'
+import { Card as CardModel } from '../../modules/Card'
 
 interface Cardrops {
     card: CardModel
@@ -26,7 +26,7 @@ export default class Card extends Component<Cardrops, CardState> {
                 {card.cost === 1 && 
                     <div className="card-cost">cost 1</div>
                 }
-                {this.render}
+                .
             </div>
         )
     }
