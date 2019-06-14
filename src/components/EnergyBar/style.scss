@@ -1,0 +1,20 @@
+.energy-bar {
+
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    color: white;
+
+    .energy-elt {
+        font-weight: bold;
+        height: 30px;
+        width: 100%;
+        // outline: 2px white solid;
+    }
+    .energy-elt-current {
+        box-shadow:0px 0px 0px 3px white inset;
+    }
+}
