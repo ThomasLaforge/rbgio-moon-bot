@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import EnergyBar from '../EnergyBar/EnergyBar';
 
 interface RobotProps {
     energy: number
@@ -14,9 +15,7 @@ export default class Robot extends Component<RobotProps, RobotState> {
     render() {
         return (
             <div className='robot'>
-                <div className="energy">
-                    {this.props.energy}
-                </div>
+                <EnergyBar energy={this.props.energy} />
             </div>
         )
     }

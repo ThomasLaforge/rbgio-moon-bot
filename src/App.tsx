@@ -1,11 +1,16 @@
 import React from 'react';
 import './App.css';
-import EnergyBar from './components/EnergyBar/EnergyBar';
+
+import Robot from './components/Robot/Robot';
+
+import {Robot as RobotModel} from './modules/Robot'
 
 const App: React.FC = () => {
+  const robot = new RobotModel()
+
   return (
     <div className="App">
-      <EnergyBar energy={4} />
+      <Robot energy={robot.energy} />
     </div>
   );
 }
