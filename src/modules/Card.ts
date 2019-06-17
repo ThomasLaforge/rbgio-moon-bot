@@ -42,8 +42,4 @@ export class AccessoryCard extends Card {
 
 export class ReRollCard extends Card {
     
-    constructor(){
-        super()
-    }
-    
 }

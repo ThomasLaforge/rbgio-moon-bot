@@ -160,7 +160,6 @@ export class Game {
         })
 
         this.nextPlayer()
-        
     }
 
     isGameOver(){

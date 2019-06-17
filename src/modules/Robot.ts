@@ -45,7 +45,7 @@ export class Robot {
         
     addDice(){
         if(this.nbDice === MAX_NB_DICE){
-            throw "can't add more dice"
+            throw Error("can't add more dice")
         }
         this.nbDice++
     }
@@ -55,7 +55,7 @@ export class Robot {
             this.accessories.push(card)
         }
         else {
-            throw "no more free accessories slots";
+            throw Error("no more free accessories slots")
         }
     }
 
@@ -64,7 +64,7 @@ export class Robot {
             this.canReRoll = true
         }
         else {
-            throw "already have reroll capacity";   
+            throw Error("already have reroll capacity")
         }
     }
 
@@ -76,7 +76,7 @@ export class Robot {
         else if(part instanceof LeftLeg){ this.leftLeg = part }
         else if(part instanceof RightLeg){ this.rightLeg = part }
         else { 
-            throw "error adding part"; 
+            throw Error("error adding part") 
         }
     }
 
