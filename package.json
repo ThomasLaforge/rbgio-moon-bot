@@ -36,6 +36,7 @@
     ]
   },
   "devDependencies": {
-    "@types/chroma-js": "^1.4.1"
+    "@types/chroma-js": "^1.4.1",
+    "node-sass": "^4.11.0"
   }
 }
