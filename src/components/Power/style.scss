@@ -1,0 +1,19 @@
+.power {
+    height: 50px;
+    width: 32px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+// Energy
+.power-type-0 {
+    background-image: url(./resources/eclair.png);
+}
+// Hit
+.power-type-1 {
+    background-image: url(./resources/fist.png);
+}
+// Rocket
+.power-type-2 {
+    background-image: url(./resources/rocket.png);
+}
