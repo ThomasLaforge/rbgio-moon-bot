@@ -1,8 +1,9 @@
 import { Part } from "./Part";
-import { Power } from "./defs";
+import { Power, CardType } from "./defs";
 
 export abstract class Card {
     constructor(
+        public type: CardType,
         public cost: 0 | 1 = 0
     ){}
 
@@ -16,7 +17,7 @@ export class PartCard extends Card {
     constructor(
         public part: Part
     ){
-        super()
+        super(CardType.Part)
     }
 
 }
@@ -24,7 +25,7 @@ export class PartCard extends Card {
 export class DiceCard extends Card {
     
     constructor(){
-        super(1)
+        super(CardType.Dice, 1)
     }
     
 }
@@ -35,11 +36,15 @@ export class AccessoryCard extends Card {
         public power: Power,
         public values: -1 | 1
     ){
-        super()
+        super(CardType.Accessory)
     }
     
 }
 
 export class ReRollCard extends Card {
     
+    constructor(){
+        super(CardType.ReRoll)
+    }
+
 }

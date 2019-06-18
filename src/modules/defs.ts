@@ -30,6 +30,13 @@ export interface JsonCard {
     type: PartType
 }
 
+export enum CardType {
+    Dice,
+    Part,
+    ReRoll,
+    Accessory
+}
+
 export interface DiceUseDescription {
     diceValues: number[],
     part: Part,
