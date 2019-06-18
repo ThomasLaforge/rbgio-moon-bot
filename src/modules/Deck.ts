@@ -1,7 +1,7 @@
 import {Card, DiceCard, ReRollCard, AccessoryCard, PartCard} from './Card';
 import { Tools } from './Tools';
 import { Power, JsonCard } from './defs';
-import { Part, PartFactory } from './Part';
+import { PartFactory } from './Part';
 
 const initialDeck: Card[] = []
 // more dice
